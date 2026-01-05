@@ -1,22 +1,26 @@
 #include<iostream>
 using namespace std;
 
-class A{
+class Base{
     public:
-    friend int f(A* a);        
+        virtual void test(){
+            cout<<"This is the base class"<<'\n';
+        }
 };
 
-int f(A *a){
-    return 5;
-}
+class Child : public Base{
+    public:
 
-class B : public A{
+        void test() override{
+            cout<<"This is the child class"<<'\n';
+        }
 
+        void test2(){
+            cout<<"Just checking"<<'\n';
+        }
 };
-
 
 int main(){
-    B * b = new B();
-    cout<<f(b);
+    Base * b = new Child();
     return 0;
 }
