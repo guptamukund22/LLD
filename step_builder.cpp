@@ -68,8 +68,6 @@ class HttpRequestBuilder: public NameBuilder, public paramBuilder, public bodyBu
 };
 
 
-
-
 int main(){
     return 0;
 }
